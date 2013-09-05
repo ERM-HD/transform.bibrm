@@ -80,14 +80,14 @@
                     <xsl:choose>
                         <xsl:when test="contains($abo, 'Grundvertrag')">
                             <xsl:variable name="package" select="'Grundvertrag'"/>
-                            <xsl:variable name="passed" select="'true'"/>
+                            true
                         </xsl:when>
                         <xsl:when test="contains($abo, 'Full')">
                             <xsl:variable name="package" select="'FullCollection'"/>
-                            <xsl:variable name="passed" select="'true'"/>
+                            true
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:variable name="passed" select="'false'"/>
+                            false
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
@@ -96,14 +96,14 @@
                     <xsl:choose>
                         <xsl:when test="contains($abo, 'Grundvertrag')">
                             <xsl:variable name="package" select="'Grundvertrag'"/>
-                            <xsl:variable name="passed" select="'true'"/>
+                            true
                         </xsl:when>
                         <xsl:when test="contains($abo, 'Cross')">
                             <xsl:variable name="package" select="'CrossAccess'"/>
-                            <xsl:variable name="passed" select="'true'"/>
+                            true
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:variable name="passed" select="'false'"/>
+                            false
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
@@ -112,14 +112,14 @@
                     <xsl:choose>
                         <xsl:when test="contains($abo, 'Grundvertrag')">
                             <xsl:variable name="package" select="'Grundvertrag'"/>
-                            <xsl:variable name="passed" select="'true'"/>
+                            true
                         </xsl:when>
                         <xsl:when test="contains($abo, 'Cross')">
                             <xsl:variable name="package" select="'CrossAccess'"/>
-                            <xsl:variable name="passed" select="'true'"/>
+                            true
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:variable name="passed" select="'false'"/>
+                            false
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
@@ -128,23 +128,24 @@
                     <xsl:choose>
                         <xsl:when test="contains($abo, 'Grundvertrag')">
                             <xsl:variable name="package" select="'Grundvertrag'"/>
-                            <xsl:variable name="passed" select="'true'"/>
+                            true
                         </xsl:when>
                         <xsl:when test="contains($abo, 'Full')">
                             <xsl:variable name="package" select="'FullCollection'"/>
-                            <xsl:variable name="passed" select="'true'"/>
+                            true
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:variable name="passed" select="'false'"/>
+                            false
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:variable name="passed" select="'false'"/>
+                    false
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <Test><xsl:value-of select="$passed"/></Test>
+        <Verlag><xsl:value-of select="$tempVerlag"/></Verlag>
             <xsl:choose>
                 <xsl:when test="contains($abo, 'Einzelabo') and contains($passed, 'false')">
                     <xsl:element name="rdf:Description">
